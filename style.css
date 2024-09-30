@@ -4,175 +4,155 @@
     padding: 0;
     box-sizing: border-box;
 }
-html,body
+html,body,#main
 {
     height: 100%;
     width: 100%;
 }
-
-.main
+#nav1
 {
-    height: 100%;
+    height: 30px;
     width: 100%;
-    display: flex;
-    padding:0px 90px;
-    padding-top: 150px;
-}
-
-/* ------- */
-
-.left
-{
-    height: 100%;
-    width: 48%;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    padding-bottom:50px;
-    
-}
-.left-bottom h3
-{
-    padding:10px 0;
-}
-.left h1
-{
-    font-size: 11vh;
-    font-weight: 700;
-    line-height: 11vh;
-}
-
-/* --------- */
-
-.button
-{
-    width: fit-content;
-    padding:8px 15px;
-    border:solid black 1px;
-    border-radius:50px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-bottom:10px;
-}
-.button h4
-{
-    font-size:2.2vh;
-    font-weight:500;
-    margin-right:10px;
-}
-#color-1
-{
-    background-color:burlywood;
-    height:2vh;
-    width: 2vh;
-    border-radius:50%;
-    margin:0 5px;
-}
-#color-2
-{
-    background-color:brown;
-    height:2vh;
-    width:2vh;
-    border-radius:50%;
-    padding-left:5px;
-}
-
-/* --------- */
-
-.right
-{
-    height: 100%;
-    width: 30%;
-    position:relative;
-}
-.right-top
-{
-    display:flex;
-    justify-content:space-between;
     height:fit-content;
-}
-.right-top i
-{
-    color:gold;
-}
-.right-image
-{
-    height:95%;
-    width: 100%;
-    background-image:url(https://plus.unsplash.com/premium_photo-1699534957140-7f421527adb7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d29tYW4lMjBwb3RyYWl0JTIwaW4lMjBkZXNlcnR8ZW58MHx8MHx8fDA%3D);
-    background-size:cover;
-    background-position: 50% 20%;
-}
-
-.black-circle
-{
-    height: 120px;
-    width: 120px;
-    background: rgb(34, 33, 43);
-    color:white;
-    border-radius:50%;
-    display:flex;
-    justify-content: center;
+    display: flex;
+    justify-content: end;
     align-items: center;
-    position:absolute;
-    right:-20%;
-    top:30%;
+    gap:20px;
+    padding-top:20px;
+    padding-right:30px;
 }
-.rotated
+#nav1 h4
 {
-    position:absolute;
-    left:-10%;
-    bottom:0;
-    transform-origin:0 0;
-    rotate:-90deg;
+    font-weight:550;
 }
-.rotated h2
+#nav1 h4:nth-of-type(2) 
 {
-    font-size:4vh;
+    font-weight:100;
+}
+#nav1-icon
+{
+    height: 40px;
+    width: 40px;
+    display:flex;
+    align-items: center;
+    margin-right:auto;
+    margin-left:20px;
+}
+#nav1-icon #color1,#nav1-icon #color2
+{
+    height: 20px;
+    width: 20px;
+    background-color:black;
+    border-radius:50%;
+}
+#nav1 svg
+{
+    display:none;
 }
 
 /* ---------- */
 
-@media (max-width:700px)
+#nav2
 {
-    .main
+    height: 35px;
+    width: 100%;
+    display: flex;
+    gap:50px;
+    padding-left:20px;
+    padding-top:10px;
+}
+#nav2 h4
+{
+    font-weight:500;
+}
+
+/* ----------- */
+
+#mid-bottom
+{
+    height:calc(100% - 102px);
+    width: 100%;
+}
+#content
+{
+    height: 45%;
+    width:100%;
+    display:flex; 
+    align-items:center;
+    overflow-x: auto;
+}
+#content::-webkit-scrollbar
+{
+    background-color:transparent;
+    height: 7px;
+}
+#content::-webkit-scrollbar-thumb
+{
+    background-color: orange;
+}
+
+.text
+{
+    height: 100%;
+    width: 50%;
+    /* border:solid black 2px; */
+    flex-shrink:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.text h4
+{
+    font-size:6vh;
+}
+
+/* -------- */
+
+#bottom
+{
+    height: 55%;
+    width: 100%;
+    display:flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+#bottom img
+{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    flex-shrink:0;
+}
+#bottom::-webkit-scrollbar
+{
+    display: none;
+}
+
+/* ------- */
+
+@media (max-width:600px)
+{
+    #nav1 h4
     {
-        flex-direction:column;
-        padding-top:40px;
+        display:none;
     }
-    .left
+    #nav1 svg
     {
-        height: 100%;
-        width: 100%;
-        padding:0;
+        display:initial;
     }
-    .button
+    #nav2
     {
-        margin-top:10px;
+        overflow-x: auto;
+        gap:40px;
     }
-    .right
+    #nav2::-webkit-scrollbar-thumb
     {
-        height: 100%;
-        width: 100%;
+        background-color:orange;
     }
-    .right-top
+    #nav2::-webkit-scrollbar
     {
-        padding: 30px 0;
+        background-color:transparent;
+        height: 4px;
     }
-    .right-image
-    {
-        height:100%;
-    }
-    .black-circle
-    {
-        height: 90px;
-        width: 90px;
-        right:-15%;
-        top:50%;
-    }
-    .rotated
-    {
-        bottom: -40px;;
-    }
+
 }
